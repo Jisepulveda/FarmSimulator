@@ -3,51 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace FarmSimulator
 {
     class Map
     {
-        protected int[,] map = new int[1000,1000];
+        protected int[,] map;
+        private Lake lake;
+        private River river;
+        private Farm farm;
 
-
-        public void generateMap(bool lake , bool river = true)
+        public Map(int sizeMap)
         {
-            //Creamos el mapa con distintos objetos ( piedras, arboles, etc )
-            CreateObjects(this.map);
+            int[,] map = new int[sizeMap, sizeMap];
 
-            if (river == true)
+            this.map = map;
+        }
+        public int[,] GetMap()
+        {
+            return this.map;
+        }
+        public void GenerateMap(bool createLake , bool createRiver = true)
+        {
+
+            if(createLake == true)
             {
-                CreateRiver(this.map);
+                Lake lake = new Lake();
             }
 
-            if (lake == true)
+            if(createRiver == true)
             {
-                CreateLake(this.map);
+                River river = new River();
             }
 
-            CreateFarm(this.map);
+
 
         }
 
-        private void CreateRiver(int[,] map)
-        {
-
-        }
-
-        private void CreateLake(int[,] map)
-        {
-
-        }
-
-        private void CreateObjects(int[,] map)
-        {
-
-        }
-
-        private void CreateFarm(int[,] map)
-        {
-
-        }
     }
 }

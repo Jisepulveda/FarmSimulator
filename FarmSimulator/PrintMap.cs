@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 
 namespace FarmSimulator
 {
@@ -25,10 +24,18 @@ namespace FarmSimulator
                         if (j % 2 == 0)
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
+                            if(matrix[j, i] == 1)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                            }
                         }
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            if (matrix[j, i] == 1)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                            }
                         }
                     }
                     else
@@ -36,14 +43,22 @@ namespace FarmSimulator
                         if (j % 2 == 0)
                         {
                             Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            if (matrix[j, i] == 1)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                            }
                         }
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
+                            if (matrix[j, i] == 1)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                            }
                         }
                     }
 
-                    Console.Write(" ");
+                    Console.Write(matrix[j,i]);
                 }
             }
         }

@@ -9,6 +9,7 @@ namespace FarmSimulator
     class Lake
     {
         private List<List<int>> position;
+        
 
         public Lake()
         {
